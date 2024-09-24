@@ -1,14 +1,11 @@
 '''
 This file contains the essential methods to run Resume Information Extractor Application.
 '''
-from flask import Flask, render_template, request, redirect
-from tabulate import tabulate
+
 import google.generativeai as genai
 import dotenv
-import PyPDF2
-import requests  
+import PyPDF2  
 import json
-import re
 import os
 
 dotenv.load_dotenv()
