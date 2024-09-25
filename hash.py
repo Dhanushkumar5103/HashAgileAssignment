@@ -43,6 +43,9 @@ def extract_with_gemini_api(text):
 
 def display_resume_info(data):
     '''This function returns the essential data'''
-    resume_text = pdf_to_text(data)
+    path = "./data/" + data.name
+    with open(path, "wb") as temp_file:
+        temp_file.write(data.read())
+    resume_text = pdf_to_text(path)
     resume_info = extract_with_gemini_api(resume_text)
     return resume_info
